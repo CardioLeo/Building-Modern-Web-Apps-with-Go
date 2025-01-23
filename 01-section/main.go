@@ -23,4 +23,15 @@ func main() {
 	i = 7
 
 	fmt.Println("i is set to", i)
+
+	test := saySomething()
+	fmt.Println(test)
+	whatWasSaid := saySomething()
+	fmt.Println(whatWasSaid)
+
+	fmt.Println("The function returned", whatWasSaid)
+}
+
+func saySomething() string {
+	return "something" // first example
 }
