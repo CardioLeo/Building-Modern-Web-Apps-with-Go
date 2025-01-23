@@ -49,4 +49,14 @@ func main() {
 
 	myMap3["me"] = me
 	log.Println(myMap3["me"].FirstName)
+
+	// var myNewVar float32
+
+	// myNewVar = 11.1
+
+	// myMap4 := make(map[string]interface{}) // not recommended -> map of interfaces, I guess
+			// will store anything you want
+			// but have to cast it (type cast) to what you need
+
+	// onto slices
 }
