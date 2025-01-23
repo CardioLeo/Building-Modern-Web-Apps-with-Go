@@ -4,6 +4,11 @@ import (
 	"log"
 )
 
+type User struct {
+	FirstName string
+	LastName string
+}
+
 func main() {
 	var myString string
 	var myInt int
@@ -34,4 +39,14 @@ func main() {
 	myMap2["Second"] = 2
 
 	log.Println(myMap2["First"], myMap2["Second"])
+	
+	myMap3 := make(map[string]User)
+	
+	me := User {
+		Firstname: "Trevor",
+		LastName: "Sawler",
+	}
+
+	myMap3["me"] = me
+	log.Println(myMap3["me"].FirstName)
 }
