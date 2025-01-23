@@ -48,4 +48,6 @@ func main() {
 		default:
 			log.Println("cat is something else")
 	}
+
+	// he tries setting it to dog and also to horse, and runs it; again, I'm sleepy
 }
