@@ -9,7 +9,8 @@ func main() {
 	// very like other languages
 
 	var isTrue bool
-	isTrue = true
+	// isTrue = true
+	isTrue = false
 	if isTrue {
 		log.Println("isTrue is", isTrue)
 	} else {
