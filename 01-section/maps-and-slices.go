@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"sort"
 )
 
 type User struct {
@@ -59,4 +60,30 @@ func main() {
 			// but have to cast it (type cast) to what you need
 
 	// onto slices
+
+	var myString2 string
+	myString2 = "Fish"
+
+	var mySlice []string
+	mySlice = append(mySlice, "Trevor")
+
+	log.Println(myString2)
+
+	log.Println(mySlice)
+
+	mySlice = append(mySlice, "John")
+	mySlice = append(mySlice, "Mary")
+
+	log.Println(mySlice)
+
+	var myIntSlice []int
+	myIntSlice = append(myIntSlice, 2)
+	myIntSlice = append(myIntSlice, 1)
+	myIntSlice = append(myIntSlice, 3)
+
+	log.Println(myIntSlice)
+
+	sort.Ints(myIntSlice) // have to include/import sort
+
+	log.Println(myIntSlice)
 }
