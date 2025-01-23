@@ -9,7 +9,7 @@ type myStruct struct {
 }
 
 func (m *myStruct) printFirstName() string {
-	
+	return m.FirstName
 }
 
 func main() {
