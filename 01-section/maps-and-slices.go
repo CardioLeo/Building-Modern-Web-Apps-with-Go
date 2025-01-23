@@ -20,6 +20,18 @@ func main() {
 					// he has yet to encounter this
 
 	myMap["dog"] = "Samson"
+	myMap["other-dog"] = "Cassie"
 
 	log.Println(myMap["dog"])
+	log.Println(myMap["other-dog"])
+
+	myMap["dog"] = "fido"
+
+	log.Println("now my dog's name is", myMap["dog"])
+
+	myMap2 := make(map[string]int)
+	myMap2["First"] = 1
+	myMap2["Second"] = 2
+
+	log.Println(myMap2["First"], myMap2["Second"])
 }
