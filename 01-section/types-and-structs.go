@@ -6,6 +6,12 @@ import (
 
 var s = "seven"
 
+var firstName string
+var lastname string
+var phoneNumber string
+var age int
+var birthDate time.Time // take advantage of strong typing
+
 func main() {
 	var s2 = "six"
 
