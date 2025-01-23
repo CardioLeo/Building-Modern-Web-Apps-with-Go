@@ -22,6 +22,11 @@ type User struct {
 	BirthDate time.Time
 }
 
+/*
+var special string // not exported
+var Special string // exported
+*/
+
 func main() {
 	var s2 = "six"
 
@@ -43,10 +48,17 @@ func main() {
 		// BirthDate:
 	}
 
-	log.Println(user.FirstName, user.LastName, "Birthdate:", user.BirthDate)
+	log.Println(user.FirstName, user.LastName, user.Age, user.PhoneNumber, "Birthdate:", user.BirthDate)
+	Whatever()
 }
 
 func saySomething(s3 string) (string, string) {
 	log.Println("s from the saySomething func is", s)
 	return s3, "World"
+}
+
+// func whatever() // not exported
+
+func Whatever() {
+	log.Println("test")
 }
