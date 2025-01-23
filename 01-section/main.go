@@ -4,6 +4,11 @@ import (
 	"fmt"
 )
 
+// package level variable
+// var myName string
+// is allowed even if not used
+// but he gets rid of it
+
 func main() {
 	fmt.Println("Hello, World.")
 
@@ -28,10 +33,18 @@ func main() {
 	fmt.Println(test)
 	whatWasSaid := saySomething()
 	fmt.Println(whatWasSaid)
+	somethingMore, somethingYetMoreStill := saySomething2()
 
 	fmt.Println("The function returned", whatWasSaid)
+	fmt.Println("and finally, after", whatWasSaid, "was said, it was also said:", somethingMore, somethingYetMoreStill)
 }
 
 func saySomething() string {
 	return "something" // first example
+}
+
+// possible to return more than one thing
+
+func saySomething2() (string, string) {
+	return "something", "and something else"
 }
