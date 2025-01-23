@@ -14,6 +14,7 @@ func main() {
 
 	log.Println("myString is now set to", myString)
 
+	log.Println("after func call myString is set to", myString)
 }
 
 func changeUsingPointer(s *string) {
