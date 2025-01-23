@@ -10,7 +10,7 @@ type myStruct struct {
 
 func (m *myStruct) printFirstName() string {
 	return m.FirstName
-}
+} // so this becomes like an interface, right - duck-typing and everything
 
 func main() {
 	var myVar myStruct
@@ -20,6 +20,6 @@ func main() {
 		FirstName: "Mary",
 	}
 
-	log.Println("myVar is set to", myVar.FirstName)
-	log.Println("myVar2 is set to", myVar2.FirstName)
+	log.Println("myVar is set to", myVar.printFirstName())
+	log.Println("myVar2 is set to", myVar2.printFirstName())
 }
