@@ -43,7 +43,7 @@ func main() {
 	myMap3 := make(map[string]User)
 	
 	me := User {
-		Firstname: "Trevor",
+		FirstName: "Trevor",
 		LastName: "Sawler",
 	}
 
