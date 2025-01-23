@@ -35,5 +35,17 @@ func main() {
 	// he has a bunch more else conditionals - but I'm tired, it's late,
 	// and I've done this before. I'm going over this aspect mostly just for practice
 
+	// switch statements
 
+	myVar := "cat"
+	switch myVar {
+		case "cat":
+			log.Println("cat is set to cat")
+		case "dog":
+			log.Println("cat is set to dog")
+		case "fish":
+			log.Println("cat is set to fish")
+		default:
+			log.Println("cat is something else")
+	}
 }
