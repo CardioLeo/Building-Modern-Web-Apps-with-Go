@@ -12,4 +12,8 @@ func main() {
 	whatToSay = "Goodbye, cruel world"
 
 	fmt.Println(whatToSay)
+
+	whatToSay = "Sorry, I meant: 'Goodbye, relatively cruel world'"
+
+	fmt.Println(whatToSay)
 }
