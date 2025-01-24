@@ -5,12 +5,14 @@ import (
 	"math/rand"
 )
 
-func PrintText(s string) {
-	log.Println(s)
-}
+//func PrintText(s string) {
+//	log.Println(s)
+//}
 
 func RandomNumber(n int) int {
-	value := rand.Intn(n)
+	value := rand.Intn(n) // he says you should seed with time.Now().UnixNano(),
+				// but this is actually giving me random numbers wiothut using 
+				// time.Now().UnixNano()
 	return value
 }
 
@@ -21,7 +23,12 @@ func CalculateValue(intChan chan int) {
 }
 
 func main() {
-	PrintText("Hi")
+	// PrintText("Hi")
 	intChan := make(chan int)
 	defer close(intChan)
+	
+	go CalculateValue(intChan)
+
+	num := <-intChan
+	log.Println(num)
 }
