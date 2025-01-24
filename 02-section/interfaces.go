@@ -20,6 +20,14 @@ type Gorilla struct {
 	NumberOfTeeth int
 }
 
+func (d *Dog) Says() string {
+	return "Woof"
+}
+
+func (d *Dog) NumberOfLegs() int {
+	return 4
+}
+
 func PrintInfo(a Animal) {
 	fmt.Println("This animal says", a.Says(), "and has", a.NumberOfLegs(), "legs")
 }
@@ -30,5 +38,5 @@ func main() {
 		Breed: "German Shepherd",
 	}
 
-	PrintInfo(dog)
+	PrintInfo(&dog)
 }
