@@ -24,4 +24,12 @@ func main() {
 	for _, animal := range animals {
 		log.Println(animal)
 	}
+
+	animals2 := make(map[string]string)
+	animals2["cat"] = "Fluffy"
+	animals2["dog"] = "Fido"
+
+	for _, animal := range animals2 {
+		log.Println(animal)
+	}
 }
