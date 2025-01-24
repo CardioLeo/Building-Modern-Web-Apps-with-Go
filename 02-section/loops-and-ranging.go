@@ -10,4 +10,8 @@ func main() {
 	for i := 0; i <= 10; i++ { // passing these "to the for keyword"
 		log.Println(i)
 	}
+
+	for i := 0; i <= 5; i++ {
+		log.Println(i)
+	}
 }
