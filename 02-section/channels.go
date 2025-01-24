@@ -16,7 +16,7 @@ func RandomNumber(n int) int {
 	return value
 }
 
-const numPool = 10
+const numPool = 1000
 func CalculateValue(intChan chan int) {
 	randomNumber := RandomNumber(numPool)
 	intChan <- randomNumber
