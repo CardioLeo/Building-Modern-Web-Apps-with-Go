@@ -28,6 +28,14 @@ func (d *Dog) NumberOfLegs() int {
 	return 4
 }
 
+func (d *Gorilla) Says() string {
+	return "Ugh"
+}
+
+func (d *Gorilla) NumberOfLegs() int {
+	return 2
+}
+
 func PrintInfo(a Animal) {
 	fmt.Println("This animal says", a.Says(), "and has", a.NumberOfLegs(), "legs")
 }
@@ -39,4 +47,12 @@ func main() {
 	}
 
 	PrintInfo(&dog)
+
+	gorilla := Gorilla {
+		Name: "Jock",
+		Color: "grey",
+		NumberOfTeeth: 38,
+	}
+
+	PrintInfo(&gorilla)
 }
