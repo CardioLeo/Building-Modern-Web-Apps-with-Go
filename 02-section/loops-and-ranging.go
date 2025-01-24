@@ -29,7 +29,9 @@ func main() {
 	animals2["cat"] = "Fluffy"
 	animals2["dog"] = "Fido"
 
-	for _, animal := range animals2 {
-		log.Println(animal)
+	for animalType, animal := range animals2 {
+		log.Println(animalType, animal)
 	}
+
+
 }
