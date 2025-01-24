@@ -20,4 +20,8 @@ func main() {
 	for i, animal := range animals {
 		log.Println(i, animal)
 	}
+
+	for _, animal := range animals {
+		log.Println(animal)
+	}
 }
