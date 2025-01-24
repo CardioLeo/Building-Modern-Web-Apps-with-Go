@@ -33,5 +33,10 @@ func main() {
 		log.Println(animalType, animal)
 	}
 
+	var firstLine = "Once upon a midnight dreary"
+	for i, l := range firstLine {
+		log.Println(i, ":", l)
+		log.Printf("%c:%c", i, l)
+	}
 
 }
