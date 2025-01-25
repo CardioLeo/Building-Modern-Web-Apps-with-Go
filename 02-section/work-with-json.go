@@ -33,7 +33,7 @@ func main() {
 
 	var unmarshalled []Person
 
-	err := json.Unmarshall([]byte(myJson), &unmarshalled)
+	err := json.Unmarshal([]byte(myJson), &unmarshalled)
 	if err != nil {
 		log.Println("Error unmarshalled json", err)
 	}
