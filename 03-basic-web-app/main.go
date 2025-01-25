@@ -5,11 +5,14 @@ import (
 	"net/http"
 )
 
+// Home is the home page handler
 func Home(w http.ResponseWriter, r *http.Request) {
 	// "This is going to be a handler function;" has to handle two parameters
 	fmt.Fprintf(w, "This is the home page")
 }
 
+// first thing that should appear before function is the function name,
+// About is the about page handler
 func About(w http.ResponseWriter, r *http.Request) {
 	sum := addValues(2, 2)
 	_, _ = fmt.Fprintf(w, fmt.Sprintf("This is the about page and 2 + 2 is %d", sum)
@@ -17,10 +20,12 @@ func About(w http.ResponseWriter, r *http.Request) {
 	// which this function will return
 }
 
+// addValues adds two integers and returns the sum
 func addValues(x, y int) (int, error) {
 	return x + y
 }
 
+// main is the main application function
 func main() {
 	// fmt.Println("Hello, world")
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
