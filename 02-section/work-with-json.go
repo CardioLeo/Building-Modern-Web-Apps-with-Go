@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"log"
+	"fmt"
 )
 
 
@@ -48,4 +49,25 @@ func main() {
 	m1.LastName = "West"
 	m1.HairColor = "red"
 	m1.HasDog = false
+
+	mySlice = append(mySlice, m1)
+
+	var m2 Person
+
+	m2.FirstName = "Diana"
+	m2.LastName = "Prince"
+	m2.HairColor = "black"
+	m2.HasDog = false
+
+	mySlice = append(mySlice, m2)
+
+	newJson, err := json.MarshalIndent(mySlice, "", "	")
+						// not the same as regular marshal!
+						// indend makes it more readable, but you
+						// will want to use without indent
+						// in many cases to minimize data sent
+	if err != nil {
+		log.Println("error marshalling", err)
+	}
+	fmt.Println(string(newJson))
 }
