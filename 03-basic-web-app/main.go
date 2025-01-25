@@ -24,7 +24,7 @@ func main() {
 		fmt.Println(fmt.Sprintf("Number of bytes written: %d", n))
 	})
 
-
+	http.HandleFunc("/", Home)
 	// "how easy it is to start a webserver that listens in go"
 	_ = http.ListenAndServe(":8080", nil)
 	// starting with the underscore like that says, "if there's an error, I don't care"
