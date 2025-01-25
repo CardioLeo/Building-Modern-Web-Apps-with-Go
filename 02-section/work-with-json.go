@@ -6,7 +6,7 @@ import (
 )
 
 
-type Person Struct {
+type Person struct {
 	FirstName string `json:"first_name"`
 	LastName string `json:"last_name"`
 	HairColor string `json:"hair_color"`
