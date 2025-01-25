@@ -11,13 +11,13 @@ func Home(w http.ResponseWriter, r *http.Request) {
 }
 
 func About(w http.ResponseWriter, r *http.Request) {
-	sum := AddValues(2, 2)
+	sum := addValues(2, 2)
 	_, _ = fmt.Fprintf(w, fmt.Sprintf("This is the about page and 2 + 2 is %d", sum)
 	// adds underscore to beginning of line because I don't care about the error
 	// which this function will return
 }
 
-func AddValues(x, y int) (int, error) {
+func addValues(x, y int) (int, error) {
 	return x + y
 }
 
