@@ -31,6 +31,7 @@ func addValues(x, y int) (int) {
 // main is the main application function
 func main() {
 	// fmt.Println("Hello, world")
+	/*
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		// first parameter is the url that I want this to listen to
 		n, err := fmt.Fprintf(w, "Hello, world!")
@@ -42,12 +43,16 @@ func main() {
 		}
 		fmt.Println(fmt.Sprintf("Number of bytes written: %d", n))
 	})
-
+	*/
 	http.HandleFunc("/", Home)
-	http.HandleFunc("/", About)
+	http.HandleFunc("/about", About)
+	// so now, you can go to this by putting "http://localhost:8080/about" into the
+	// search bar / address bar
+
 	// "how easy it is to start a webserver that listens in go"
 	// _ = http.ListenAndServe(":8080", nil) // may be preferable
-	
+
+	fmt.Println(fmt.Sprintf("Starting application on port %s", portNumber))
 	_ = http.ListenAndServe(portNumber, nil)
 
 	// starting with the underscore like that says, "if there's an error, I don't care"
