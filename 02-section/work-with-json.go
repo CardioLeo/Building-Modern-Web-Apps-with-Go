@@ -39,4 +39,13 @@ func main() {
 	}
 	
 	log.Printf("unmarshalled: %v", unmarshalled)
+
+	// write json from a struct
+
+	var mySlice []Person
+	var m1 Person
+	m1.FirstName = "Wally"
+	m1.LastName = "West"
+	m1.HairColor = "red"
+	m1.HasDog = false
 }
