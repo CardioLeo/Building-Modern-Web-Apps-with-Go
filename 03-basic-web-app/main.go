@@ -5,6 +5,8 @@ import (
 	"net/http"
 )
 
+const portNumber = ":8080"
+
 // Home is the home page handler
 func Home(w http.ResponseWriter, r *http.Request) {
 	// "This is going to be a handler function;" has to handle two parameters
@@ -44,7 +46,10 @@ func main() {
 	http.HandleFunc("/", Home)
 	http.HandleFunc("/", About)
 	// "how easy it is to start a webserver that listens in go"
-	_ = http.ListenAndServe(":8080", nil)
+	// _ = http.ListenAndServe(":8080", nil) // may be preferable
+	
+	_ = http.ListenAndServe(portNumber, nil)
+
 	// starting with the underscore like that says, "if there's an error, I don't care"
 	// important comment because the underscore is so confusing if you don't know!
 	// "this is the basis for any web application in go" very cool
