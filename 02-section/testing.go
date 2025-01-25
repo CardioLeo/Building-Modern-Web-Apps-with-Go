@@ -17,7 +17,6 @@ func divide(x, y float32) (float32, error) {
 
 func main() {
 	result, err := divide(100.0, 10.0)
-	log.Println()
 	if err != nil {
                 log.Println(err)
                 return
