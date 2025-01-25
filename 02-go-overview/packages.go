@@ -2,7 +2,7 @@ package main
 
 import (
 	"log"
-	"github.com/cardioleo/myniceprogram/helpers"
+	// "github.com/cardioleo/myniceprogram/helpers"
 )
 
 func main() {
