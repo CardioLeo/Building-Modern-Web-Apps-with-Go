@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
+	"net/http"
 )
 
 func main() {
-	fmt.Println("Hello, world")
+	// fmt.Println("Hello, world")
+	http.HandlerFunc()
 }
