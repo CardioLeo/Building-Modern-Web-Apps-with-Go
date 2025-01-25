@@ -15,14 +15,15 @@ func Home(w http.ResponseWriter, r *http.Request) {
 // About is the about page handler
 func About(w http.ResponseWriter, r *http.Request) {
 	sum := addValues(2, 2)
-	_, _ = fmt.Fprintf(w, fmt.Sprintf("This is the about page and 2 + 2 is %d", sum)
+	_, _ = fmt.Fprintf(w, fmt.Sprintf("This is the about page and 2 + 2 is %d", sum))
 	// adds underscore to beginning of line because I don't care about the error
 	// which this function will return
 }
 
 // addValues adds two integers and returns the sum
-func addValues(x, y int) (int, error) {
-	return x + y
+func addValues(x, y int) (int) {
+	sum := x + y
+	return sum
 }
 
 // main is the main application function
