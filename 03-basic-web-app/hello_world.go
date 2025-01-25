@@ -21,5 +21,14 @@ func main() {
 
 
 	// "how easy it is to start a webserver that listens in go"
-	http.ListenAndServe(":8080", nil)
+	_ = http.ListenAndServe(":8080", nil)
+	// starting with the underscore like that says, "if there's an error, I don't care"
+	// important comment because the underscore is so confusing if you don't know!
+	// "this is the basis for any web application in go" very cool
+
+	// if you go to "http://localhost:8080/" in a web browser while
+	// you're running this command, you will see hello world. (Works.)
+	// Also it does print out number of bytes twice every time that
+	// you refresh. He comments on how he doesn't know why and isn't
+	// worried about it right now. Mine does the same thing.
 }
