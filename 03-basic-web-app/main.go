@@ -7,7 +7,7 @@ import (
 
 func Home(w http.ResponseWriter, r *http.Request) {
 	// "This is going to be a handler function;" has to handle two parameters
-
+	fmt.Fprintf(w, "This is the home page")
 }
 
 func main() {
