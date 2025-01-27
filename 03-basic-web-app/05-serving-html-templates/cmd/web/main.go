@@ -1,8 +1,11 @@
 package main
 
 import (
+	"github.com/cardioleo/go-course/pkg/config"
 	"github.com/cardioleo/go-course/pkg/handlers"
+	"github.com/cardioleo/go-course/pkg/render"
 	"fmt"
+	"log"
 	"net/http"
 )
 
@@ -11,6 +14,12 @@ const portNumber = ":8080"
 
 // main is the main application function
 func main() {
+	var app config.AppConfig
+	tc, err := render.CreateTemplateCache()
+	if err != nil {
+		log.Fatal("cannot create template cache")
+	}
+	app.TemplateCache = tc
 	http.HandleFunc("/", handlers.Home)
 	http.HandleFunc("/about", handlers.About)
 	// so now, you can go to this by putting "http://localhost:8080/about" into the
