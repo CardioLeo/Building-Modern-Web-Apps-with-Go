@@ -20,6 +20,9 @@ func main() {
 		log.Fatal("cannot create template cache")
 	}
 	app.TemplateCache = tc
+
+	render.NewTemplates(&app)
+
 	http.HandleFunc("/", handlers.Home)
 	http.HandleFunc("/about", handlers.About)
 	// so now, you can go to this by putting "http://localhost:8080/about" into the
