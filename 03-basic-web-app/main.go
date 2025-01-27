@@ -11,42 +11,11 @@ const portNumber = ":8080"
 
 // Home is the home page handler
 func Home(w http.ResponseWriter, r *http.Request) {
-	// "This is going to be a handler function;" has to handle two parameters
-	fmt.Fprintf(w, "This is the home page")
 }
 
 // first thing that should appear before function is the function name,
 // About is the about page handler
 func About(w http.ResponseWriter, r *http.Request) {
-	sum := addValues(2, 2)
-	_, _ = fmt.Fprintf(w, fmt.Sprintf("This is the about page and 2 + 2 is %d", sum))
-	// adds underscore to beginning of line because I don't care about the error
-	// which this function will return
-}
-
-// addValues adds two integers and returns the sum
-func addValues(x, y int) (int) {
-	sum := x + y
-	return sum
-}
-
-func divideValues(x, y float32) (float32, error){
-	if y <= 0 {
-		err := errors.New("cannot divide by zero")
-		return 0, err
-	}
-	result := x / y
-	return result, nil
-}
-
-func Divide(w http.ResponseWriter, r *http.Request) {
-	var x, y float32 = 100.0, 0.0
-	f, err := divideValues(x, y)
-	if err != nil {
-		fmt.Fprintf(w, "cannot divide by zero")
-		return
-	}
-	fmt.Fprintf(w, fmt.Sprintf("%f divided by %f is %f", x, y, f))
 }
 
 // main is the main application function
@@ -67,7 +36,6 @@ func main() {
 	*/
 	http.HandleFunc("/", Home)
 	http.HandleFunc("/about", About)
-	http.HandleFunc("/divide", Divide)
 	// so now, you can go to this by putting "http://localhost:8080/about" into the
 	// search bar / address bar
 
