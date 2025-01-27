@@ -6,24 +6,33 @@ import (
         "net/http"
 	"path/filepath"
 	"bytes"
+	"github.com/cardioleo/go-course/pkg/config"
 )
+
+var functions = template.FuncMap{
+
+}
+
+var app *config.AppConfig
+
+// NewTemplates sets the config for the template package
+func NewTemplates(a *config.AppConfig) {
+	app = a
+}
 
 // Renders templates using ...
 func RenderTemplate(w http.ResponseWriter, tmpl string) {
         // get the template cache from the app config
 
-	// create a template cache
+	tc := app.TemplateCache
 
-	tc, err := CreateTemplateCache()
-	if err != nil {
-		log.Fatal(err)
-	}
+	// line above now creates a template cache
 
 	// get the requested template from cache
 
 	t, ok := tc[tmpl]
 	if !ok {
-		log.Fatal(err)
+		log.Fatal("could not get template from template cache")
 	}
 	
 
@@ -32,13 +41,17 @@ func RenderTemplate(w http.ResponseWriter, tmpl string) {
 	// helps find out as close as possible where the error is happening! awesome
 	buf := new(bytes.Buffer)
 
-	err = t.Execute(buf, nil)
+	// was err instead of _
+	_ = t.Execute(buf, nil)
+	// he gets rid of this next part
+	/*
 	if err != nil {
 		log.Println(err)
 	}
+	*/
 
 	// render the template
-	_, err = buf.WriteTo(w)
+	_, err := buf.WriteTo(w)
 	if err != nil {
 		log.Println(err)
 	}
