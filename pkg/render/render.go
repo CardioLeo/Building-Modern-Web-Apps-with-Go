@@ -10,7 +10,9 @@ import (
 
 // Renders templates using ...
 func RenderTemplate(w http.ResponseWriter, tmpl string) {
-        // create a template cache
+        // get the template cache from the app config
+
+	// create a template cache
 
 	tc, err := CreateTemplateCache()
 	if err != nil {
