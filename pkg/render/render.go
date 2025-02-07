@@ -36,6 +36,7 @@ func RenderTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData)
 
 	t, ok := tc[tmpl]
 	if !ok {
+		log.Println("the error is in RenderTemplate in render.go")
 		log.Fatal("could not get template from template cache")
 	}
 	
@@ -67,6 +68,7 @@ func CreateTemplateCache() (map[string]*template.Template, error) {
 	// get all of the files names *.page.tmpl from ./templates
 	pages, err := filepath.Glob("./../../templates/*.page.tmpl")
 	if err != nil {
+		log.Println("The error is in CreateTemplateCache() of render.go")
 		return myCache, err
 	}
 
@@ -75,16 +77,19 @@ func CreateTemplateCache() (map[string]*template.Template, error) {
 		name := filepath.Base(page)
 		ts, err := template.New(name).ParseFiles(page)
 		if err != nil {
+			log.Println("The error is in the for loop, after parsing files, of CreateTemplateCache() of render.go")
         	        return myCache, err
 		}
 		matches, err := filepath.Glob("./../../templates/*.layout.tmpl")
 		if err != nil {
+			log.Println("The error is in the for loop, after filepath.Glob(), of CreateTemplateCache() of render.go")
                 	return myCache, err
         	}
 		if len(matches) > 0 {
 			ts, err = ts.ParseGlob("./../../templates/*.layout.tmpl")
 		        if err != nil {
-                		return myCache, err
+                		log.Println("The error is in the for loop, after ParseGlob(), of CreateTemplateCache() of render.go")
+				return myCache, err
         		}
 		}
 		myCache[name] = ts
