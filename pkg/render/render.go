@@ -21,6 +21,11 @@ func NewTemplates(a *config.AppConfig) {
 	app = a
 }
 
+func AddDefaultData(td *models.TemplateData) *models.TemplateData{
+	// data wanted on every page will later be put here
+	return td
+}
+
 // Renders templates using ...
 func RenderTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData) {
 	var tc map[string]*template.Template
@@ -57,6 +62,8 @@ func RenderTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData)
 		log.Println(err)
 	}
 	*/
+
+	td = AddDefaultData(td)
 
 	// render the template
 	_, err := buf.WriteTo(w)
