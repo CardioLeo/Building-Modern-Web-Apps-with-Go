@@ -11,7 +11,7 @@ import (
 
 var functions = template.FuncMap{
 
-}
+} // okay, good news, this is still blank in his code for video 37.
 
 var app *config.AppConfig
 
