@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"github.com/cardioleo/go-course/pkg/render"
+	"github.com/cardioleo/go-course/pkg/models"
 	"github.com/cardioleo/go-course/pkg/config"
 	"net/http"
 )
@@ -31,7 +32,7 @@ func NewHandlers(r *Repository) {
 
 // Home is the home page handler
 func (m *Repository) Home(w http.ResponseWriter, r *http.Request) {
-        render.RenderTemplate(w, "home.page.tmpl", &TemplateData{})
+        render.RenderTemplate(w, "home.page.tmpl", &models.TemplateData{})
 }
 
 // first thing that should appear before function is the function name,
@@ -44,7 +45,7 @@ func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
 
 	// send data to the template (no way to do this as of right now)
 	// make changes in render template
-	render.RenderTemplate(w, "about.page.tmpl", &TemplateData{
+	render.RenderTemplate(w, "about.page.tmpl", &models.TemplateData{
 		StringMap: stringMap,
 	})
 }
