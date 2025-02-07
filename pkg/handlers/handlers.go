@@ -6,6 +6,16 @@ import (
 	"net/http"
 )
 
+type TemplateData struct {
+	StringMap map[string]string
+	IntMap map[string]int
+	FloatMap map[string]float32
+	Data map[string]interface{} //special data
+					// "and in Go, when you're not sure
+					// what the data type is, we call it
+					// an interface."
+}
+
 // the repository pattern
 // allows swapping stuff out of code base with minimal changes
 
@@ -37,5 +47,9 @@ func (m *Repository) Home(w http.ResponseWriter, r *http.Request) {
 // first thing that should appear before function is the function name,
 // About is the about page handler
 func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
-        render.RenderTemplate(w, "about.page.tmpl")
+	// perform some business logic here
+
+	// send data to the template (no way to do this as of right now)
+	// make changes in render template
+	render.RenderTemplate(w, "about.page.tmpl")
 }
