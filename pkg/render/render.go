@@ -7,6 +7,7 @@ import (
 	"path/filepath"
 	"bytes"
 	"github.com/cardioleo/go-course/pkg/config"
+	"github.com/cardioleo/go-course/pkg/handlers"
 )
 
 var functions = template.FuncMap{
