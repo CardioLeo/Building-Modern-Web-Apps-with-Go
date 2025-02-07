@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"bytes"
 	"github.com/cardioleo/go-course/pkg/config"
-	"github.com/cardioleo/go-course/pkg/handlers"
+	"github.com/cardioleo/go-course/pkg/models"
 )
 
 var functions = template.FuncMap{
@@ -22,7 +22,7 @@ func NewTemplates(a *config.AppConfig) {
 }
 
 // Renders templates using ...
-func RenderTemplate(w http.ResponseWriter, tmpl string, td *handlers.TemplateData) {
+func RenderTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData) {
 	var tc map[string]*template.Template
 	if app.UseCache {
 		// get the template cache from the app config
