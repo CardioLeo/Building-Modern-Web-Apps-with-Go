@@ -46,7 +46,7 @@ func RenderTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData)
 	buf := new(bytes.Buffer)
 
 	// was err instead of _
-	_ = t.Execute(buf, nil)
+	_ = t.Execute(buf, td) // td is the template data passed in from models
 	// he gets rid of this next part
 	/*
 	if err != nil {
