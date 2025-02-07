@@ -36,6 +36,9 @@ func RenderTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData)
 
 	t, ok := tc[tmpl]
 	if !ok {
+		log.Println("ok is set to:", ok)
+		log.Println("t is set to:", t)
+		log.Println("tc[tmpl] is set to:", tc[tmpl])
 		log.Println("the error is in RenderTemplate in render.go")
 		log.Fatal("could not get template from template cache")
 	}
