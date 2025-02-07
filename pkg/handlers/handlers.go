@@ -56,5 +56,5 @@ func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
 
 	// send data to the template (no way to do this as of right now)
 	// make changes in render template
-	render.RenderTemplate(w, "about.page.tmpl")
+	render.RenderTemplate(w, "about.page.tmpl", &TemplateData{})
 }
