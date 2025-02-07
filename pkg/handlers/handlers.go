@@ -6,6 +6,7 @@ import (
 	"net/http"
 )
 
+// TemplateData holds data sent from handlers to templates
 type TemplateData struct {
 	StringMap map[string]string
 	IntMap map[string]int
@@ -14,6 +15,10 @@ type TemplateData struct {
 					// "and in Go, when you're not sure
 					// what the data type is, we call it
 					// an interface."
+	CSRFtoken string
+	Flash string
+	Warning string
+	Error string
 }
 
 // the repository pattern
