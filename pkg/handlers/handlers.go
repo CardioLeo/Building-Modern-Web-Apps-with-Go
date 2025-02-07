@@ -53,6 +53,9 @@ func (m *Repository) Home(w http.ResponseWriter, r *http.Request) {
 // About is the about page handler
 func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
 	// perform some business logic here
+	stringMap := make(map[string]string)
+	stringMap["test"] = "Hello, again."
+
 
 	// send data to the template (no way to do this as of right now)
 	// make changes in render template
