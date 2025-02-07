@@ -46,7 +46,7 @@ func NewHandlers(r *Repository) {
 
 // Home is the home page handler
 func (m *Repository) Home(w http.ResponseWriter, r *http.Request) {
-        render.RenderTemplate(w, "home.page.tmpl")
+        render.RenderTemplate(w, "home.page.tmpl", &TemplateData{})
 }
 
 // first thing that should appear before function is the function name,
