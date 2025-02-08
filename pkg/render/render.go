@@ -73,7 +73,7 @@ func CreateTemplateCache() (map[string]*template.Template, error) {
 	// myCache := make(map[string]*template.Template)	
 	myCache := map[string]*template.Template{} // exactly the same functionality as using make
 	// get all of the files names *.page.tmpl from ./templates
-	pages, err := filepath.Glob("../../03-basic-web-app/06-sharing-data-with-templates/templates/*page.tmpl")
+	pages, err := filepath.Glob("../../03-basic-web-app/06-sharing-data-with-templates/templates/*.page.tmpl")
 	if err != nil {
 		return myCache, err
 	}
