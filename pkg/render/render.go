@@ -29,11 +29,12 @@ func AddDefaultData(td *models.TemplateData) *models.TemplateData{
 // Renders templates using ...
 func RenderTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData) {
 	var tc map[string]*template.Template
-	// tc = app.TemplateCache
 	if app.UseCache {
+		log.Println("using cached template")
 		// get the template cache from the app config
 		tc = app.TemplateCache
 	} else {
+		log.Println("creating templates and adding to cache")
 		tc, _ = CreateTemplateCache()
 	}
 	// line above now creates a template cache
