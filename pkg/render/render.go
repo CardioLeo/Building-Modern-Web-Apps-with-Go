@@ -1,7 +1,6 @@
 package render
 
 import (
-	"fmt" // need to remove later
 	"log"
         "html/template"
         "net/http"
@@ -43,10 +42,6 @@ func RenderTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData)
 
 	t, ok := tc[tmpl]
 	if !ok {
-		log.Println("ok is set to:", ok)
-		log.Println("t is set to:", t)
-		log.Println("tc[tmpl] is set to:", tc[tmpl])
-		log.Println("the error is in RenderTemplate in render.go")
 		log.Fatal("could not get template from template cache")
 	}
 	
@@ -78,49 +73,30 @@ func CreateTemplateCache() (map[string]*template.Template, error) {
 	// myCache := make(map[string]*template.Template)	
 	myCache := map[string]*template.Template{} // exactly the same functionality as using make
 	// get all of the files names *.page.tmpl from ./templates
-	// pages, err := filepath.Glob("./../../templates/*.page.tmpl")
 	pages, err := filepath.Glob("../../03-basic-web-app/06-sharing-data-with-templates/templates/*page.tmpl")
-	// log.Println("pages is set to:", pages, "and err is set to:", err)
-	// log.Println("myCache is set to:", myCache)
 	if err != nil {
-		log.Println("The error is in CreateTemplateCache() of render.go")
-		log.Println("myCache is set to:", myCache)
 		return myCache, err
 	}
 
 	// range through all files ending with *.page.tmpl
 	for _, page := range pages {
 		name := filepath.Base(page)
-		log.Println("name is set to:", name)
 		ts, err := template.New(name).ParseFiles(page)
-		fmt.Println("ts is set to:", ts)
 		if err != nil {
-			log.Println("specifically, the error is in page:", name)
-			log.Println("The error is in the for loop, after parsing files, of CreateTemplateCache() of render.go")
-			log.Println("myCache is set to:", myCache)
 			return myCache, err
 		}
 		// matches, err := filepath.Glob("./../../templates/*.layout.tmpl")
 		matches, err := filepath.Glob("./../../03-basic-web-app/06-sharing-data-with-templates/templates/*.layout.tmpl")
-		log.Println("matches is set to:", matches)
 		if err != nil {
-			log.Println("The error is in the for loop, after filepath.Glob(), of CreateTemplateCache() of render.go")
-                	log.Println("specifically, the error is in page:", name)
-			log.Println("myCache is set to:", myCache)
 			return myCache, err
         	}
 		if len(matches) > 0 {
-			ts, err = ts.ParseGlob("./../../templates/*.layout.tmpl")
-			log.Println("len(matches) is greater than zero, so: ts is set to:", ts)
+			ts, err = ts.ParseGlob("./../../03-basic-web-app/06-sharing-data-with-templates/templates/*.layout.tmpl")
 		        if err != nil {
-                		log.Println("The error is in the for loop, after ParseGlob(), of CreateTemplateCache() of render.go")
-				log.Println("specifically, the error is in page:", name)
-				log.Println("myCache is set to:", myCache)
 				return myCache, err
         		}
 		}
 		myCache[name] = ts
 	}
-	log.Println("everything looks fine in CreateTemplateCache()")
 	return myCache, nil
 }
