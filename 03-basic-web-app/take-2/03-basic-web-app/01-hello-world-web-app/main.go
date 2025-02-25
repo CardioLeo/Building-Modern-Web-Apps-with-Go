@@ -5,6 +5,8 @@ import (
 	"net/http"
 )
 
+const portNumber = ":8080"
+
 // AddValues returns the sum of two integers passed into it
 func addValues(x, y int) int {
         var sum int
@@ -29,7 +31,8 @@ func main() {
 	http.HandleFunc("/", Home)
 	http.HandleFunc("/about", About)
 
-	_ = http.ListenAndServe(":8080", nil) // nil is for handler
+	fmt.Println(fmt.Sprintf("Starting application on port %s", portNumber))
+	_ = http.ListenAndServe(portNumber, nil) // nil is for handler
 	// the underscore is for saying that if there's an error, we don't care
 	// because ListenAndServe does return an error, I guess
 }
