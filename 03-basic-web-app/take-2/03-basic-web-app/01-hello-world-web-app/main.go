@@ -20,4 +20,7 @@ func main() {
 		fmt.Println(fmt.Sprintf("Number of bytes written: %d", n))
 	})
 	// uniform resource locator, url, -> "/"
+	_ = http.ListenAndServe(":8080", nil) // nil is for handler
+	// the underscore is for saying that if there's an error, we don't care
+	// because ListenAndServe does return an error, I guess
 }
