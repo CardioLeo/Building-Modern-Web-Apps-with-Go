@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"github.com/CardioLeo/go-course/pkg/render"
 	"net/http"
 )
 
