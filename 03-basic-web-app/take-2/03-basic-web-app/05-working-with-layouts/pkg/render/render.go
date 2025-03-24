@@ -22,3 +22,11 @@ func RenderTemplate(w http.ResponseWriter, tmpl string) {
                 return
         }
 }
+
+func createTemplateCache() (map[string]*template.Template, error) {
+	// myCache := make(map[string]*template.Template)
+	// one way you could do it
+	myCache := map[string]*template.Template{}
+	// make it an empty map, same functionality
+	// but more common to see it this way
+}
