@@ -1,7 +1,7 @@
 package config
 
 import (
-	"http/template"
+	"html/template"
 )
 
 // App Config holds the application config
