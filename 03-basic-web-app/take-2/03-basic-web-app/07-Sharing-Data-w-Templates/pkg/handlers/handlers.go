@@ -51,12 +51,16 @@ func NewHandlers(r *Repository) {
 
 // Home is the home page handler
 func (m *Repository) Home(w http.ResponseWriter, r *http.Request){
-        render.RenderTemplate(w, "home.page.tmpl")
+        render.RenderTemplate(w, "home.page.tmpl", &TemplateData{})
 }
 
 // About is the page handler
 func (m *Repository) About(w http.ResponseWriter, r *http.Request){
-        render.RenderTemplate(w, "about.page.tmpl")
+	// perform business logic
+	stringMap := make(map[string]string)
+	stringMap["test"] = "Hello, again."
+
+        render.RenderTemplate(w, "about.page.tmpl", &TemplateData{})
 }
 
 // now both handlers for Home and About have receivers, that is:
