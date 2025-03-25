@@ -7,7 +7,7 @@ import (
         "net/http"
 	"path/filepath"
 	"github.com/CardioLeo/go-course/pkg/config"
-	"github.com/CardioLeo/go-course/pkg/handlers"
+	"github.com/CardioLeo/go-course/pkg/models"
 )
 
 // he has this but it's empty:
@@ -26,7 +26,7 @@ func NewTemplate(a *config.AppConfig) {
 
 
 // RenderTemplate renders templates using html/template
-func RenderTemplate(w http.ResponseWriter, tmpl string, td *handlers.TemplateData) {
+func RenderTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData) {
 	
 	var tc map[string]*template.Template
 	
@@ -49,7 +49,7 @@ func RenderTemplate(w http.ResponseWriter, tmpl string, td *handlers.TemplateDat
 	}
 	
 	buf := new(bytes.Buffer) // for finer grained error checking!
-	err := t.Execute(buf, nil) // this will be where I use td from handlers.go, TemplateData
+	err := t.Execute(buf, td) // td from models.go, for TemplateData
 	// first make sure there is data in there!
 	if err != nil {
 		log.Println(err)
