@@ -2,6 +2,8 @@ package models
 
 // TemplateData moved from handlers package in video 37
 
+// "This will never import another package; but will only exist to be imported by other packages" -- to avoid import cycle problem
+
 // new type for any kind of data I might want to pass, video 37
 // TemplateData holds data from handlers to templates
 type TemplateData struct {
