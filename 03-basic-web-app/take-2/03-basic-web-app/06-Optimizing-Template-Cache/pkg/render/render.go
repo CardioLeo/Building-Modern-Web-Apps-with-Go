@@ -6,7 +6,16 @@ import (
         "html/template"
         "net/http"
 	"path/filepath"
+	"github.com/CardioLeo/"
 )
+
+var app *config.AppConfig
+
+// NewTemplate sets the config for the template package
+func NewTemplate(a *config.AppConfig) {
+	app = a
+}
+
 
 // RenderTemplate renders templates using html/template
 func RenderTemplate(w http.ResponseWriter, tmpl string) {
