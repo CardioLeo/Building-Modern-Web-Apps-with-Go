@@ -7,6 +7,7 @@ import (
         "net/http"
 	"path/filepath"
 	"github.com/CardioLeo/go-course/pkg/config"
+	"github.com/CardioLeo/go-course/pkg/handlers"
 )
 
 // he has this but it's empty:
