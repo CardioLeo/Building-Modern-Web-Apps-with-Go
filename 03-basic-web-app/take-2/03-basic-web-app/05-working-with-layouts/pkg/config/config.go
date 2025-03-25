@@ -1,5 +1,9 @@
 package config
 
+import (
+	"http/template"
+)
+
 // App Config holds the application config
 // will consist of a single struct
 // later, I can put anything that I need site-wide in this file
