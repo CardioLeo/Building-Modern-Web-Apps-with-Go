@@ -22,6 +22,7 @@ func main() {
 	}
 
 	app.TemplateCache = tc
+	app.UseCache = false // added in video 35
 
 	// creates repository variable
 	repo := handlers.NewRepo(&app)
