@@ -60,7 +60,9 @@ func (m *Repository) About(w http.ResponseWriter, r *http.Request){
 	stringMap := make(map[string]string)
 	stringMap["test"] = "Hello, again."
 
-        render.RenderTemplate(w, "about.page.tmpl", &TemplateData{})
+        render.RenderTemplate(w, "about.page.tmpl", &TemplateData{
+		StringMap: stringMap,
+	})
 }
 
 // now both handlers for Home and About have receivers, that is:
