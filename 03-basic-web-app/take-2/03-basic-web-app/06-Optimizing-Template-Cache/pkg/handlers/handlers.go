@@ -30,12 +30,14 @@ func NewHandlers(r *Repository) {
 }
 
 // Home is the home page handler
-func Home(w http.ResponseWriter, r *http.Request){
+func (m *Repository) Home(w http.ResponseWriter, r *http.Request){
         render.RenderTemplate(w, "home.page.tmpl")
 }
 
 // About is the page handler
-func About(w http.ResponseWriter, r *http.Request){
+func (m *Repository) About(w http.ResponseWriter, r *http.Request){
         render.RenderTemplate(w, "about.page.tmpl")
 }
 
+// now both handlers for Home and About have receivers, that is:
+// the pointer to Repository just before the name
