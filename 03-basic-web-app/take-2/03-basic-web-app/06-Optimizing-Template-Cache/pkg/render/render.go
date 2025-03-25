@@ -58,7 +58,7 @@ func RenderTemplate(w http.ResponseWriter, tmpl string) {
         }
 	*/
 
-	_, err = buf. WriteTo(w)
+	_, err := buf. WriteTo(w)
 	if err != nil {
 		log.Println(err)
 	}
