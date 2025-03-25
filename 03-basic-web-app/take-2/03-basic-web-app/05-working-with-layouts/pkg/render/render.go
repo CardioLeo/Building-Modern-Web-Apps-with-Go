@@ -11,6 +11,8 @@ import (
 // RenderTemplate renders templates using html/template
 func RenderTemplate(w http.ResponseWriter, tmpl string) {
 	
+	// new instructor comment: get the template cache from the app config
+
 	// create a template cache
 	// in video "Setting application wide configuration", he says
 	// that the following function call is moved to main.go; and
