@@ -40,7 +40,7 @@ func RenderTemplate(w http.ResponseWriter, tmpl string) {
 	}
 	
 	buf := new(bytes.Buffer) // for finer grained error checking!
-	err = t.Execute(buf, nil)
+	err := t.Execute(buf, nil)
 	if err != nil {
 		log.Println(err)
 	}
