@@ -9,6 +9,13 @@ import (
 	"github.com/CardioLeo/"
 )
 
+// he has this but it's empty:
+/*
+var functions = template.FuncMap{
+
+}
+*/
+
 var app *config.AppConfig
 
 // NewTemplate sets the config for the template package
