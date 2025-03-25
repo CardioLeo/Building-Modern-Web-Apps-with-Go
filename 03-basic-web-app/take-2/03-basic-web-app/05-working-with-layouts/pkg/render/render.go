@@ -12,7 +12,11 @@ import (
 func RenderTemplate(w http.ResponseWriter, tmpl string) {
 	
 	// create a template cache
-	tc, err := createTemplateCache() // tc stands for Template Cache
+	// in video "Setting application wide configuration", he says
+	// that the following function call is moved to main.go; and
+	// shows it, but if I get rid of it here it doesn't work.
+	// Need to mess with it more
+	tc, err := CreateTemplateCache() // tc stands for Template Cache
 	if err != nil {
 		log.Fatal(err)
 	}
