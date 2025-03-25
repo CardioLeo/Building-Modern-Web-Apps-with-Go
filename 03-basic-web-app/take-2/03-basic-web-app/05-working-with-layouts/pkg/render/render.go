@@ -1,26 +1,52 @@
 package render
 
 import (
-        "fmt"
+	"bytes"
+	"log"
         "html/template"
         "net/http"
+	"path/filepath"
 )
 
 // RenderTemplate renders templates using html/template
 func RenderTemplate(w http.ResponseWriter, tmpl string) {
+	
 	// create a template cache
+	tc, err := createTemplateCache() // tc stands for Template Cache
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	// get requested template from cache
+	t, ok := tc[tmpl] // t for template
+	if !ok {
+		log.Fatal(err)
+		// if no template, program dies
+	}
+	
+	buf := new(bytes.Buffer) // for finer grained error checking!
+	err = t.Execute(buf, nil)
+	if err != nil {
+		log.Println(err)
+	}
 
 	// render the template
 
 
+	/*
+	// he deletes this whole section after 17 minutes, video 31
 	parsedTemplate, _ := template.ParseFiles("./templates/" + tmpl)
         err := parsedTemplate.Execute(w, nil)
         if err != nil {
                 fmt.Println("error parsing template:", err) // error messages aren't supposed to begin with capital letters
                 return
         }
+	*/
+
+	_, err = buf. WriteTo(w)
+	if err != nil {
+		log.Println(err)
+	}
 }
 
 func createTemplateCache() (map[string]*template.Template, error) {
