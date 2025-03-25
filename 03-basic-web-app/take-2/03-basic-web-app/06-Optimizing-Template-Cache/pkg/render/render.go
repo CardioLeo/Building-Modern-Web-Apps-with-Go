@@ -29,20 +29,13 @@ func RenderTemplate(w http.ResponseWriter, tmpl string) {
 	
 	// new instructor comment: get the template cache from the app config
 
-	// create a template cache
-	// in video "Setting application wide configuration", he says
-	// that the following function call is moved to main.go; and
-	// shows it, but if I get rid of it here it doesn't work.
-	// Need to mess with it more
-	tc, err := CreateTemplateCache() // tc stands for Template Cache
-	if err != nil {
-		log.Fatal(err)
-	}
+	tc := app.TemplateCache
 
 	// get requested template from cache
 	t, ok := tc[tmpl] // t for template
 	if !ok {
-		log.Fatal(err)
+		log.Fatal("could not get template from template cache")
+		// this is changed from log.Fatal(err) bc err no longer exists
 		// if no template, program dies
 	}
 	
