@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/CardioLeo/go-course/pkg/config"
 	"github.com/CardioLeo/go-course/pkg/handlers"
 	"net/http"
 )
@@ -10,6 +11,9 @@ const portNumber = ":8080"
 
 // Main is the main application function
 func main() {
+
+	var app config.AppConfig
+
 	http.HandleFunc("/", handlers.Home)
 	http.HandleFunc("/about", handlers.About)
 
