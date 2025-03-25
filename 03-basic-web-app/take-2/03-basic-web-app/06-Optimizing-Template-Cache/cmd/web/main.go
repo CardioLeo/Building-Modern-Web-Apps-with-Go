@@ -23,6 +23,12 @@ func main() {
 
 	app.TemplateCache = tc
 
+	// creates repository variable
+	repo := handlers.NewRepo(&app)
+	// pass back to handlers
+	// to use repository pattern
+	handlers.NewHandlers(repo)
+
 	render.NewTemplate(&app)
 
 	http.HandleFunc("/", handlers.Home)
