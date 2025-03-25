@@ -48,7 +48,7 @@ func RenderTemplate(w http.ResponseWriter, tmpl string, td handlers.TemplateData
 	}
 	
 	buf := new(bytes.Buffer) // for finer grained error checking!
-	err := t.Execute(buf, nil)
+	err := t.Execute(buf, nil) // this will be where I use td from handlers.go, TemplateData
 	if err != nil {
 		log.Println(err)
 	}
