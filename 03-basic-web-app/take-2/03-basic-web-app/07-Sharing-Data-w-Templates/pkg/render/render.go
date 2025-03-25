@@ -24,6 +24,11 @@ func NewTemplate(a *config.AppConfig) {
 	app = a
 }
 
+// takes and returns the same
+func AddDefaultData(td *models.TemplateData) *models.TemplateData {
+	return td
+	// doesn't do much right now, but will later be helpful for making data available on every page
+}
 
 // RenderTemplate renders templates using html/template
 func RenderTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData) {
@@ -48,6 +53,9 @@ func RenderTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData)
 		// if no template, program dies
 	}
 	
+	// AddDefaultData will be used later on! but for now...
+	td = AddDefaultData(td)
+
 	buf := new(bytes.Buffer) // for finer grained error checking!
 	err := t.Execute(buf, td) // td from models.go, for TemplateData
 	// first make sure there is data in there!
