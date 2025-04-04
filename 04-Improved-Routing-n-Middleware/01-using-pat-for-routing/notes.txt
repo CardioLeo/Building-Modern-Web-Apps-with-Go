@@ -1,0 +1,4 @@
+first external web package
+
+ran following command:
+"go get github.com/bmizerany/pat"
