@@ -42,7 +42,7 @@ func main() {
 
 	srv := &http.Server {
 		Addr: portNumber,
-		Handler: routes(app),
+		Handler: routes(&app),
 	}
 
 	err = srv.ListenAndServe()

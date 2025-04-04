@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/bmizerany/pat"
 	"github.com/CardioLeo/go-course/pkg/config"
-	"github.com/CardioLeo/go-course/pkg/config"
+	"github.com/CardioLeo/go-course/pkg/handlers"
 	"net/http"
 )
 
