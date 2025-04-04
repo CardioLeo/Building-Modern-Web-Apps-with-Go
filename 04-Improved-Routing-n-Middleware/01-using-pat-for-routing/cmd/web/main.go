@@ -32,13 +32,7 @@ func main() {
 
 	render.NewTemplate(&app)
 
-	// http.HandleFunc("/", handlers.Repo.Home)
-	// http.HandleFunc("/about", handlers.Repo.About)
-
 	fmt.Println(fmt.Sprintf("Starting application on port %s", portNumber))
-	// _ = http.ListenAndServe(portNumber, nil) // nil is for handler
-	// the underscore is for saying that if there's an error, we don't care
-	// because ListenAndServe does return an error, I guess
 
 	srv := &http.Server {
 		Addr: portNumber,
