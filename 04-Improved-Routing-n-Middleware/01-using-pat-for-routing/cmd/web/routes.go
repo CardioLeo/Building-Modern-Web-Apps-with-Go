@@ -1,8 +1,8 @@
 package main
 
 import (
-	// "github.com/bmizerany/pat"
 	"github.com/go-chi/chi"
+	"github.com/go-chi/chi/middleware"
 	"github.com/CardioLeo/go-course/pkg/config"
 	"github.com/CardioLeo/go-course/pkg/handlers"
 	"net/http"
