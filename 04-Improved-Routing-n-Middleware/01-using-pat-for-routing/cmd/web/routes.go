@@ -14,15 +14,6 @@ import (
 
 func routes(app *config.AppConfig) http.Handler {
 	// // returns handler from http.Handler
-	// mux := pat.New()
-
-	// // routes will be setup here
-	// // routes will be taken out of main.go to be put here
-
-	// mux.Get("/", http.HandlerFunc(handlers.Repo.Home))
-	// mux.Get("/about", http.HandlerFunc(handlers.Repo.About))
-
-	// commenting everything out from pat so to use chi
 
 	mux := chi.NewRouter()
 
