@@ -28,6 +28,8 @@ func main() {
 	session.Cookie.Secure = app.InProduction // insists that cookies are secure, or not
 	// sets to false for now, because localhost isn't secure, but in production you want it set to true
 
+	app.Session = session // sets var in config.go to the scs just initalized
+
 	tc, err := render.CreateTemplateCache()
 	if err != nil {
 		log.Fatal("cannot create template cache")
