@@ -17,7 +17,9 @@ func routes(app *config.AppConfig) http.Handler {
 
 	mux := chi.NewRouter()
 
-	mux.User(middleware.Recoverer) // middleware is built into chi's mux
+	mux.Use(middleware.Recoverer) // middleware is built into chi's mux
+
+	mux.Use(WriteToConsole) // refers to function in middleware.go of pwd
 
 	// create paths for NewRouter
 	mux.Get("/", handlers.Repo.Home)
