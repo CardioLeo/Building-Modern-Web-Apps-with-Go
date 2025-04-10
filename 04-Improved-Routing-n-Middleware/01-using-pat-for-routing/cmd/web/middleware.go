@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 	"fmt"
+	"github.com/justinas/nosurf"
 )
 
 func WriteToConsole(next http.Handler) http.Handler {
