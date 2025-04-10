@@ -5,6 +5,7 @@ import (
 	"github.com/CardioLeo/go-course/pkg/config"
 	"github.com/CardioLeo/go-course/pkg/handlers"
 	"github.com/CardioLeo/go-course/pkg/render"
+	"github.com/alexedwards/scs/v2"
 	"log"
 	"net/http"
 )
@@ -15,6 +16,14 @@ const portNumber = ":8080"
 func main() {
 
 	var app config.AppConfig
+
+	// initialize session with scs
+	session := scs.New()
+	session.Lifetime = 24 * time.Hour
+	session.Cookie.Persist = true
+	session.Cookie.SameSite = http.SameSiteLaxMode
+	session.Cookie.Secure = false // insists that cookies are secure, or not
+	// sets to false for now, because localhost isn't secure, but in production you want it set to true
 
 	tc, err := render.CreateTemplateCache()
 	if err != nil {
