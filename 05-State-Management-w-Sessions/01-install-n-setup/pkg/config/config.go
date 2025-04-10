@@ -3,6 +3,7 @@ package config
 import (
 	"html/template"
 	"log"
+	"github.com/alexedwards/scs/v2"
 )
 
 // App Config holds the application config
@@ -16,4 +17,5 @@ type AppConfig struct {
 	InProduction bool // bool for whether or not we are running in production or on local host;
 	// need sessions to be secure in middleware.go and in scs in main.go,
 	// so this abstracts away having to remember more than one place where we'll need this
+	Session *scs.SessionManager
 }
