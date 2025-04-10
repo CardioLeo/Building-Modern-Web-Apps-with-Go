@@ -12,6 +12,7 @@ import (
 
 const portNumber = ":8080"
 var app config.AppConfig // made global so accessible in middleware.go, for InProduction bool
+var session *scs.SessionManager // variable shadowing! - until you change initialization below
 
 // Main is the main application function
 func main() {
@@ -20,7 +21,7 @@ func main() {
 	app.InProduction = false
 
 	// initialize session with scs
-	session := scs.New()
+	session = scs.New() // no longer a new assignment so that variable shadowing is done away with
 	session.Lifetime = 24 * time.Hour
 	session.Cookie.Persist = true
 	session.Cookie.SameSite = http.SameSiteLaxMode
