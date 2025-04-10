@@ -2,6 +2,7 @@ package config
 
 import (
 	"html/template"
+	"log"
 )
 
 // App Config holds the application config
@@ -12,4 +13,7 @@ type AppConfig struct {
 	TemplateCache map[string]*template.Template
 	// InfoLog added in video 34, but commented out by me because unused for now
 	// InfoLog *log.Logger
+	InProduction bool // bool for whether or not we are running in production or on local host;
+	// need sessions to be secure in middleware.go and in scs in main.go,
+	// so this abstracts away having to remember more than one place where we'll need this
 }
