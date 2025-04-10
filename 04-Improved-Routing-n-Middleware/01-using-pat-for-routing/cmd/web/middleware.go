@@ -14,3 +14,16 @@ func WriteToConsole(next http.Handler) http.Handler {
 
 // every time you load the page, it runs this page and prints this out
 // he says, "and that's how you write middleware"
+
+// create No Surf protection from CSRF
+func NoSurf(next http.Handler) http.Handler {
+	csrfHandler := nosurf.New(next)
+
+	csrfHandler.SetBaseCookie(http.Cookie{
+		HttpOnly: true,
+		Path: "/",
+		Secure: false,
+		SameSite: http.SameSiteLaxMode,
+	})
+	return csrfHandler
+}

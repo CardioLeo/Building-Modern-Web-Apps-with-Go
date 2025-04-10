@@ -21,6 +21,7 @@ func routes(app *config.AppConfig) http.Handler {
 
 	mux.Use(WriteToConsole) // refers to function in middleware.go of pwd
 	// he deletes this call to WriteToConsole after using it for demonstration, but I'm keeping it for now
+	mux.Use(NoSurf) // calls the NoSurf package from middleware.go
 
 	// create paths for NewRouter
 	mux.Get("/", handlers.Repo.Home)
