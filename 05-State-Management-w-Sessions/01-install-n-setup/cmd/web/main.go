@@ -11,18 +11,20 @@ import (
 )
 
 const portNumber = ":8080"
+var app config.AppConfig // made global so accessible in middleware.go, for InProduction bool
 
 // Main is the main application function
 func main() {
 
-	var app config.AppConfig
+	// change this to true when in production
+	app.InProduction = false
 
 	// initialize session with scs
 	session := scs.New()
 	session.Lifetime = 24 * time.Hour
 	session.Cookie.Persist = true
 	session.Cookie.SameSite = http.SameSiteLaxMode
-	session.Cookie.Secure = false // insists that cookies are secure, or not
+	session.Cookie.Secure = app.InProduction // insists that cookies are secure, or not
 	// sets to false for now, because localhost isn't secure, but in production you want it set to true
 
 	tc, err := render.CreateTemplateCache()
