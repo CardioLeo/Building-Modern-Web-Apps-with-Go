@@ -2,7 +2,7 @@ package config
 
 import (
 	"html/template"
-	"log"
+	// "log" // only include if uncommenting InfoLog below
 	"github.com/alexedwards/scs/v2"
 )
 
