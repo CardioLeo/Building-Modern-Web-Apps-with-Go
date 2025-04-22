@@ -1,0 +1,43 @@
+Our Project
+
+- booking & reservations
+
+- a bed & breakfast with two rooms
+
+- what do we need to do this?
+
+---
+
+Key Functionality
+
+- showcase property
+
+- allow for booking a room for one or more nights
+
+- check a room's availability
+
+- book the room
+
+- notify guest, and notify property owner
+
+--
+
+Key Functionality, slide 2
+
+- have a back end that the owner logs in to
+
+- review existing bookings
+
+- show a calendar of bookings
+
+- change or cancel a booking
+
+---
+
+What will we need
+
+- an authentication system
+
+- somewhere to store information (database)
+
+- a means of sending notifications (email/text)
