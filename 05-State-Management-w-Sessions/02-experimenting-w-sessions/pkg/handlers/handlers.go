@@ -46,7 +46,7 @@ func (m *Repository) About(w http.ResponseWriter, r *http.Request){
 
 	// next two lines correlate w/ remoteIP in home handler;
 	// furthermore, they'll be used in the *.page.tmpl templates
-	remoteIP := m.App.Session.GetString(r.Context(), "remoteIP")
+	remoteIP := m.App.Session.GetString(r.Context(), "remote_ip")
 	stringMap["remote_ip"] = remoteIP
 
         render.RenderTemplate(w, "about.page.tmpl", &models.TemplateData{
