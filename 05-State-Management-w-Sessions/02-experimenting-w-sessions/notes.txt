@@ -1,0 +1,15 @@
+first external web package
+
+ran following command:
+"go get github.com/bmizerany/pat"
+
+as per video 2 of section 4, or video 39 of the whole course:
+"go get -u github.com/go-chi/chi"
+
+//
+
+as per video 01 of section 05:
+
+"go get github.com/alexedwards/scs/v2"
+
+checks that it was added to go.mod
