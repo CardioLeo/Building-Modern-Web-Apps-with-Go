@@ -2,8 +2,8 @@ package handlers
 
 import (
 	"github.com/CardioLeo/bookings/pkg/render"
-	"github.com/CardioLeo/go-course/pkg/config"
-	"github.com/CardioLeo/go-course/pkg/models"
+	"github.com/CardioLeo/bookings/pkg/config"
+	"github.com/CardioLeo/bookings/pkg/models"
 	"net/http"
 )
 
