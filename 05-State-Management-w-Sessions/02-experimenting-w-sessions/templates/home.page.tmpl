@@ -14,6 +14,15 @@
 			<h1>This is the Home Page</h1>
                         <p>temporary text for testing</p>
 			<!-- the above, if taken out and added in after restarting the server, should appear automatically if app.UseCache is false; but should not appear if app.UseCache is true -->
+
+		<p>
+			{{if ne (index .StringMap "remoteIP") ""}}
+				Your remote IP address is {{index .StringMap "remote_ip"}}
+			{{else}}
+				I don't know your ip address yet. Visit the <a href="/">HomePage</a> so I can set it		
+			{{end}}
+		</p>
+
 		</div>
 	</div>
 </div>
